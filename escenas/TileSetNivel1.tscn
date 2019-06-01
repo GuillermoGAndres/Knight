@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://sprites/tileNivel1/Pack/TileSet.png" type="Texture" id=1]
+
+[node name="TileSetNivel1" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 158.784, 164.508 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 392, 398, 248, 256 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Sprite2" type="Sprite" parent="." index="1"]
+
+position = Vector2( 487.014, 289.45 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 640, 238, 256, 82 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Sprite3" type="Sprite" parent="." index="2"]
+
+position = Vector2( 730.733, 116.296 )
+scale = Vector2( 0.577028, 0.532557 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 960, 384, 256, 352 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Sprite4" type="Sprite" parent="." index="3"]
+
+position = Vector2( 801.057, 373.532 )
+scale = Vector2( 0.577028, 0.532557 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 395, 718, 242, 256 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Sprite5" type="Sprite" parent="." index="4"]
+
+position = Vector2( 350.819, 424.154 )
+scale = Vector2( 0.577028, 0.532557 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 710, 686, 70, 32 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Sprite6" type="Sprite" parent="." index="5"]
+
+position = Vector2( 223.941, 447.969 )
+scale = Vector2( 0.577028, 0.532557 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 710, 750, 105, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Sprite7" type="Sprite" parent="." index="6"]
+
+position = Vector2( 544.098, 488.682 )
+scale = Vector2( 0.577028, 0.532557 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 2, 677, 175, 64 )
+_sections_unfolded = [ "Region" ]
+
+
