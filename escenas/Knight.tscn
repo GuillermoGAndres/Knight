@@ -208,25 +208,28 @@ tracks/2/keys = {
 "values": [ 8 ]
 }
 
-[node name="Knight" type="KinematicBody2D"]
+[node name="Knight" type="KinematicBody2D" groups=[
+"player",
+]]
 
-position = Vector2( 511.773, 299.383 )
+position = Vector2( 256.021, 151.007 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 speed = 200
-jump = 150
+jump = 200
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
 texture = ExtResource( 2 )
 hframes = 14
 _sections_unfolded = [ "Animation", "Offset", "Transform" ]
 
-[node name="SwordHit" type="Area2D" parent="Sprite" index="0"]
+[node name="SwordHit" type="Area2D" parent="Sprite" index="0" groups=[
+"player",
+]]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -262,6 +265,7 @@ blend_times = [  ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="3"]
 
+position = Vector2( -0.814514, -39.0965 )
 anchor_mode = 1
 rotating = false
 current = true
@@ -269,7 +273,7 @@ zoom = Vector2( 1, 1 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000
-limit_bottom = 800
+limit_bottom = 10000
 limit_smoothed = false
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
@@ -284,7 +288,7 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-_sections_unfolded = [ "Limit" ]
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="body_entered" from="Sprite/SwordHit" to="." method="_on_SwordHit_body_entered"]
 

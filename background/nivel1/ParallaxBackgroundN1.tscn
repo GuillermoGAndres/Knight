@@ -9,7 +9,7 @@
 [ext_resource path="res://sprites/tileNivel1/Pack/Background/Grass 2.png" type="Texture" id=7]
 [ext_resource path="res://sprites/tileNivel1/Pack/Background/Grass 1.png" type="Texture" id=8]
 
-[node name="ParallaxBackgroundN1" type="ParallaxBackground" index="0"]
+[node name="ParallaxBackgroundN1" type="ParallaxBackground"]
 
 layer = -1
 offset = Vector2( 0, 0 )
@@ -34,8 +34,8 @@ _sections_unfolded = [ "Motion" ]
 
 [node name="sky1" type="Sprite" parent="ParallaxSky1" index="0"]
 
-position = Vector2( 510, 255 )
-scale = Vector2( 0.8, 0.8 )
+position = Vector2( 349, 199.5 )
+scale = Vector2( 0.548438, 0.626563 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
@@ -47,8 +47,8 @@ motion_mirroring = Vector2( 0, 0 )
 
 [node name="sky2" type="Sprite" parent="ParallaxSky2" index="0"]
 
-position = Vector2( 510, 255 )
-scale = Vector2( 0.8, 0.8 )
+position = Vector2( 349, 199.5 )
+scale = Vector2( 0.548438, 0.626563 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
@@ -60,8 +60,8 @@ motion_mirroring = Vector2( 0, 0 )
 
 [node name="water" type="Sprite" parent="ParallaxWater" index="0"]
 
-position = Vector2( 510, 250 )
-scale = Vector2( 0.8, 0.8 )
+position = Vector2( 349, 197 )
+scale = Vector2( 0.548438, 0.634375 )
 texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
@@ -74,8 +74,8 @@ _sections_unfolded = [ "Motion" ]
 
 [node name="reflexioWater" type="Sprite" parent="ParallaxRefleW" index="0"]
 
-position = Vector2( 510, 250 )
-scale = Vector2( 0.8, 0.8 )
+position = Vector2( 349, 197 )
+scale = Vector2( 0.548438, 0.634375 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
@@ -88,8 +88,8 @@ _sections_unfolded = [ "Motion" ]
 
 [node name="clounds" type="Sprite" parent="ParallaxClound" index="0"]
 
-position = Vector2( 510, 180 )
-scale = Vector2( 0.8, 0.8 )
+position = Vector2( 349, 112 )
+scale = Vector2( 0.548438, 0.5875 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
@@ -101,8 +101,8 @@ motion_mirroring = Vector2( 0, 0 )
 
 [node name="grass2" type="Sprite" parent="ParallaxGrass2" index="0"]
 
-position = Vector2( 510, 250 )
-scale = Vector2( 0.8, 0.8 )
+position = Vector2( 349, 197 )
+scale = Vector2( 0.548438, 0.634375 )
 texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
@@ -114,8 +114,8 @@ motion_mirroring = Vector2( 0, 0 )
 
 [node name="grass1" type="Sprite" parent="ParallaxGrass1" index="0"]
 
-position = Vector2( 510, 250 )
-scale = Vector2( 0.8, 0.8 )
+position = Vector2( 349, 197 )
+scale = Vector2( 0.548438, 0.634375 )
 texture = ExtResource( 8 )
 _sections_unfolded = [ "Transform" ]
 

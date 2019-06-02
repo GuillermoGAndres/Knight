@@ -5,7 +5,7 @@ extends KinematicBody2D
 # var b = "textvar"
 var vel_actual = Vector2()
 export var speed = 200
-export var jump = 150
+export var jump = 200
 var gravity = 200
 #tamano de la pantalla
 onready var sizeScreen = get_viewport().size
@@ -19,11 +19,20 @@ func _ready():
 	get_node("AnimationPlayer").get_animation("jump").length = (-(-jump)/float(gravity))*2
 	
 	#Ajuste de camara sus limites para no desajustar el paisame
-	$Camera2D.limit_bottom = sizeScreen.y
+	#$Camera2D.limit_bottom = sizeScreen.y
+	
+	#Fue una prube para ver como funcionaban los grupos, cuando agregas a mas nodos con el mismo
+	#nombre de grupo "player"
+#	var gru = get_tree().get_nodes_in_group("player")[0]
+#	print(gru.name)
+#	for gru in get_tree().get_nodes_in_group("player"):
+#		print(gru.name)
 	pass
 
 func _physics_process(delta):
 	
+	#Esto era una prueba pra verificar en tiempo de ejecucion el salto conforme movia los valores
+	#de jump para ver si se ajustaba bien la formaula, esto solo sirve si export la variable
 	#get_node("AnimationPlayer").get_animation("jump").length = (-(-jump)/float(gravity))*2
 	if !$AnimationPlayer.is_playing():
 		$AnimationPlayer.play("idle")
@@ -42,11 +51,16 @@ func _physics_process(delta):
 		pass
 	vel_actual = move_and_slide(vel_actual,Vector2(0,-1))
 
+#Era un prueba para mejor el salto para el salto dure lo mismo que tiempo que la duracion
+#Pero mejor hice medir cuanto tiempo tarda en saltar y llegar al suelo,con la formua de MRUA
+# utilzando solamente calculos,  teniendo asi el tiempo para incrementar la animacion
+#get_node("AnimationPlayer").get_animation("jump").length = (-(-jump)/float(gravity))*2
 #	if is_on_floor() and $AnimationPlayer.current_animation == "jump":
 #		#print("suelo")
 #		$AnimationPlayer.stop(true)
 #		pass
-#	pass
+	
+	pass
 
 
 	
@@ -89,11 +103,13 @@ func leerTeclado(delta):
 
 	
 
-
+#Codigo para dectar las colisiones de la espada
 func _on_SwordHit_body_entered(body):
 	if body.is_in_group("hurtbox"):
 		#print("golpe caja")
 		body.take_damage()
+	elif body.is_in_group("enemigo"):
+		body.take_damage() #Funciones hechas por mi, para herir a los enemigos con la espada
 	pass # replace with function body
 
 
