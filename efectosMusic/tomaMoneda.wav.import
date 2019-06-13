@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/tomaMoneda.wav-e268a6eaeb519a8a5a5b6f1bfc08e213.sample"
+
+[deps]
+
+source_file="res://efectosMusic/tomaMoneda.wav"
+dest_files=[ "res://.import/tomaMoneda.wav-e268a6eaeb519a8a5a5b6f1bfc08e213.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -5,8 +5,10 @@ extends KinematicBody2D
 # var b = "textvar"
 var vel_actual = Vector2()
 export var speed = 200
-export var jump = 200
+export var jump = 160
 var gravity = 200
+var monedas = 0
+var vidas = 4
 #tamano de la pantalla
 onready var sizeScreen = get_viewport().size
 
@@ -30,7 +32,7 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	
+	verica_si_no_ha_caido()
 	#Esto era una prueba pra verificar en tiempo de ejecucion el salto conforme movia los valores
 	#de jump para ver si se ajustaba bien la formaula, esto solo sirve si export la variable
 	#get_node("AnimationPlayer").get_animation("jump").length = (-(-jump)/float(gravity))*2
@@ -41,11 +43,13 @@ func _physics_process(delta):
 	vel_actual.y += gravity * delta
 	#print(vel_actual)
 	leerTeclado(delta)
+	#Esto es para saltar y moverte a hacia los lados en el aire y atacar
 	if !is_on_floor():
 		if Input.is_action_pressed("ui_right"):
 			vel_actual.x = speed
 		elif Input.is_action_pressed("ui_left"):
 			vel_actual.x = -speed
+		#Con esto atacas en el aire y dejas que termine la animacion
 		if Input.is_action_pressed("tecla_space") and $AnimationPlayer.current_animation != "attack":
 				$AnimationPlayer.play("attack")
 		pass
@@ -79,10 +83,11 @@ func leerTeclado(delta):
 			$AnimationPlayer.play("run")
 			vel_actual.x = -speed
 			pass
-		elif Input.is_action_pressed("tecla_space"):
+		elif Input.is_action_just_pressed("tecla_space"):
 			#$AnimationPlayer.play_backwards("attack")
 			$AnimationPlayer.play("attack")
 			pass
+
 		
 	if Input.is_action_pressed("ui_up") and is_on_floor() :
 		$AnimationPlayer.play("jump")
@@ -98,6 +103,11 @@ func leerTeclado(delta):
 		$AnimationPlayer.play("idle")
 		vel_actual.x = 0
 		pass
+		
+#	if Input.is_action_pressed("tecla_a"):
+#		$AnimationPlayer.play("attack_especial")
+#		pass
+
 	pass
 
 
@@ -115,10 +125,30 @@ func _on_SwordHit_body_entered(body):
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	#print(anim_name)
-	
+	if anim_name == "death":
+		get_tree().change_scene("res://niveles/Nivel0.tscn")
 #	if anim_name == "jump" and !is_on_floor():
 #		print("Acabo la animacion pero no esta en el suelo")
 		
-	
-	
 	pass # replace with function body
+	
+func sumaMoneda():
+	monedas += 1
+	var labelGui = get_tree().get_nodes_in_group("label_monedas")[0]
+	#get_tree().get_nodes_in_group("labelBarLife")[0]
+	labelGui.text = String(monedas)
+	#print(monedas)
+	pass
+
+func take_damage():
+	get_tree().get_nodes_in_group("vida")[vidas-1].visible = false
+	vidas -= 1
+	if vidas == 0:
+		#print("murio")
+		$AnimationPlayer.play("death")
+		#queue_free()
+	pass
+func verica_si_no_ha_caido():
+	if global_position.y > 960:
+		get_tree().change_scene("res://niveles/Nivel0.tscn")
+	pass

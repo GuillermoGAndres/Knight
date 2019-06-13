@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://sprites/botones/transparentDark22.png" type="Texture" id=1]
 [ext_resource path="res://sprites/botones/lineDark19.png" type="Texture" id=2]
@@ -8,6 +8,19 @@
 [ext_resource path="res://sprites/botones/lineDark21.png" type="Texture" id=6]
 [ext_resource path="res://sprites/botones/transparentDark36.png" type="Texture" id=7]
 [ext_resource path="res://sprites/botones/lineDark33.png" type="Texture" id=8]
+[ext_resource path="res://sprites/botones/transparentDark26.png" type="Texture" id=9]
+[ext_resource path="res://sprites/botones/lineDark23.png" type="Texture" id=10]
+[ext_resource path="res://sprites/items/Coin.png" type="Texture" id=11]
+[ext_resource path="res://fonts/emma_sophiaG/emmasophia.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://sprites/items/corazon64.png" type="Texture" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 18
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 12 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [node name="GUI" type="CanvasLayer"]
 
@@ -19,9 +32,11 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="Botones" type="Node" parent="." index="0"]
 
+editor/display_folded = true
+
 [node name="boton_izq" type="TouchScreenButton" parent="Botones" index="0"]
 
-position = Vector2( 20, 310 )
+position = Vector2( 30, 310 )
 normal = ExtResource( 1 )
 pressed = ExtResource( 2 )
 bitmask = null
@@ -34,7 +49,7 @@ visibility_mode = 0
 
 [node name="boton_der" type="TouchScreenButton" parent="Botones" index="1"]
 
-position = Vector2( 160, 310 )
+position = Vector2( 130, 310 )
 normal = ExtResource( 3 )
 pressed = ExtResource( 4 )
 bitmask = null
@@ -47,7 +62,7 @@ visibility_mode = 0
 
 [node name="jump" type="TouchScreenButton" parent="Botones" index="2"]
 
-position = Vector2( 490, 310 )
+position = Vector2( 510, 310 )
 normal = ExtResource( 5 )
 pressed = ExtResource( 6 )
 bitmask = null
@@ -60,7 +75,7 @@ visibility_mode = 0
 
 [node name="attack" type="TouchScreenButton" parent="Botones" index="3"]
 
-position = Vector2( 580, 240 )
+position = Vector2( 580, 250 )
 normal = ExtResource( 7 )
 pressed = ExtResource( 8 )
 bitmask = null
@@ -70,5 +85,103 @@ shape_visible = true
 passby_press = false
 action = "tecla_space"
 visibility_mode = 0
+
+[node name="attack_especial" type="TouchScreenButton" parent="Botones" index="4"]
+
+visible = false
+position = Vector2( 420, 310 )
+normal = ExtResource( 9 )
+pressed = ExtResource( 10 )
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+
+[node name="Control" type="Control" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Sprite" type="Sprite" parent="Control" index="0"]
+
+position = Vector2( 60, 50 )
+scale = Vector2( 3.5, 3.5 )
+texture = ExtResource( 11 )
+hframes = 6
+_sections_unfolded = [ "Animation", "Transform" ]
+
+[node name="Label" type="Label" parent="Control" index="1" groups=[
+"label_monedas",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 60.0
+margin_top = 30.0
+margin_right = 140.0
+margin_bottom = 70.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="corazon" type="Sprite" parent="Control" index="2" groups=[
+"vida",
+]]
+
+position = Vector2( 460, 50 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="corazon2" type="Sprite" parent="Control" index="3" groups=[
+"vida",
+]]
+
+position = Vector2( 500, 50 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="corazon3" type="Sprite" parent="Control" index="4" groups=[
+"vida",
+]]
+
+position = Vector2( 540, 50 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="corazon4" type="Sprite" parent="Control" index="5" groups=[
+"vida",
+]]
+
+position = Vector2( 580, 50 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
 
 

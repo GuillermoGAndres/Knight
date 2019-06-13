@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://background/nivel1/ParallaxBackgroundN1.gd" type="Script" id=1]
+[ext_resource path="res://background/nivel1/ParallaxBackgroundN1-1.gd" type="Script" id=1]
 [ext_resource path="res://sprites/tileNivel1/Pack/Background/Sky BG 1.png" type="Texture" id=2]
 [ext_resource path="res://sprites/tileNivel1/Pack/Background/Sky BG 2.png" type="Texture" id=3]
 [ext_resource path="res://sprites/tileNivel1/Pack/Background/Water.png" type="Texture" id=4]
@@ -9,7 +9,7 @@
 [ext_resource path="res://sprites/tileNivel1/Pack/Background/Grass 2.png" type="Texture" id=7]
 [ext_resource path="res://sprites/tileNivel1/Pack/Background/Grass 1.png" type="Texture" id=8]
 
-[node name="ParallaxBackgroundN1" type="ParallaxBackground"]
+[node name="ParallaxBackgroundN1" type="ParallaxBackground" index="0"]
 
 layer = -1
 offset = Vector2( 0, 0 )
@@ -18,7 +18,7 @@ scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 scroll_offset = Vector2( 0, 0 )
 scroll_base_offset = Vector2( 0, 0 )
-scroll_base_scale = Vector2( 1, 1 )
+scroll_base_scale = Vector2( 1, 0 )
 scroll_limit_begin = Vector2( 0, 0 )
 scroll_limit_end = Vector2( 0, 0 )
 scroll_ignore_camera_zoom = false
@@ -27,9 +27,9 @@ _sections_unfolded = [ "Scroll" ]
 
 [node name="ParallaxSky1" type="ParallaxLayer" parent="." index="0"]
 
-motion_scale = Vector2( 1, 1 )
+motion_scale = Vector2( 0.5, 1 )
 motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
+motion_mirroring = Vector2( 700, 0 )
 _sections_unfolded = [ "Motion" ]
 
 [node name="sky1" type="Sprite" parent="ParallaxSky1" index="0"]
@@ -41,9 +41,10 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ParallaxSky2" type="ParallaxLayer" parent="." index="1"]
 
-motion_scale = Vector2( 1, 1 )
+motion_scale = Vector2( 0.5, 1 )
 motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
+motion_mirroring = Vector2( 700, 0 )
+_sections_unfolded = [ "Motion" ]
 
 [node name="sky2" type="Sprite" parent="ParallaxSky2" index="0"]
 
@@ -56,7 +57,8 @@ _sections_unfolded = [ "Transform" ]
 
 motion_scale = Vector2( 1, 1 )
 motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
+motion_mirroring = Vector2( 700, 0 )
+_sections_unfolded = [ "Motion" ]
 
 [node name="water" type="Sprite" parent="ParallaxWater" index="0"]
 
@@ -67,9 +69,9 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ParallaxRefleW" type="ParallaxLayer" parent="." index="3"]
 
-motion_scale = Vector2( 1, 1 )
+motion_scale = Vector2( 0.5, 1 )
 motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
+motion_mirroring = Vector2( 700, 0 )
 _sections_unfolded = [ "Motion" ]
 
 [node name="reflexioWater" type="Sprite" parent="ParallaxRefleW" index="0"]
@@ -81,9 +83,9 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ParallaxClound" type="ParallaxLayer" parent="." index="4"]
 
-motion_scale = Vector2( 1, 1 )
+motion_scale = Vector2( 0.5, 1 )
 motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
+motion_mirroring = Vector2( 700, 0 )
 _sections_unfolded = [ "Motion" ]
 
 [node name="clounds" type="Sprite" parent="ParallaxClound" index="0"]
@@ -95,9 +97,10 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ParallaxGrass2" type="ParallaxLayer" parent="." index="5"]
 
-motion_scale = Vector2( 1, 1 )
+motion_scale = Vector2( 0.8, 1 )
 motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
+motion_mirroring = Vector2( 700, 0 )
+_sections_unfolded = [ "Motion" ]
 
 [node name="grass2" type="Sprite" parent="ParallaxGrass2" index="0"]
 
@@ -108,9 +111,10 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ParallaxGrass1" type="ParallaxLayer" parent="." index="6"]
 
-motion_scale = Vector2( 1, 1 )
+motion_scale = Vector2( 0.9, 1 )
 motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
+motion_mirroring = Vector2( 700, 0 )
+_sections_unfolded = [ "Motion" ]
 
 [node name="grass1" type="Sprite" parent="ParallaxGrass1" index="0"]
 

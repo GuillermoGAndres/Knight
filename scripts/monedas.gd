@@ -16,5 +16,14 @@ func _ready():
 
 
 func _on_monedas_body_entered(body):
-	#queue_free()
+	if body.is_in_group("player"):
+		if $AudioStreamPlayer.playing != true:
+			body.sumaMoneda()
+		$AudioStreamPlayer.playing = true
+		
+	pass # replace with function body
+
+
+func _on_AudioStreamPlayer_finished():
+	queue_free()
 	pass # replace with function body

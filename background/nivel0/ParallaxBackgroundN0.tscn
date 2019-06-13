@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://background/nivel0/ParallaxBackgroundN0.gd" type="Script" id=1]
+[ext_resource path="res://background/nivel0/The Midnight Background/Sky.png" type="Texture" id=2]
+[ext_resource path="res://background/nivel0/The Midnight Background/Trees.png" type="Texture" id=3]
+[ext_resource path="res://background/nivel0/The Midnight Background/Stars.png" type="Texture" id=4]
+[ext_resource path="res://background/nivel0/The Midnight Background/Land 1.png" type="Texture" id=5]
+[ext_resource path="res://background/nivel0/The Midnight Background/Land 2.png" type="Texture" id=6]
+
+[node name="ParallaxBackgroundN0" type="ParallaxBackground" index="0"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 0 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = true
+script = ExtResource( 1 )
+_sections_unfolded = [ "Scroll" ]
+
+[node name="sky" type="ParallaxLayer" parent="." index="0"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 700, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="sky" type="Sprite" parent="sky" index="0"]
+
+position = Vector2( 350, 200 )
+scale = Vector2( 2.73438, 2.22222 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="trees" type="ParallaxLayer" parent="." index="1"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 700, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="trees" type="Sprite" parent="trees" index="0"]
+
+position = Vector2( 350, 200 )
+scale = Vector2( 2.73438, 2.22222 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="stars" type="ParallaxLayer" parent="." index="2"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 700, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="Sprite" type="Sprite" parent="stars" index="0"]
+
+position = Vector2( 350, 200 )
+scale = Vector2( 2.73438, 2.22222 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="land1" type="ParallaxLayer" parent="." index="3"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 700, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="Sprite" type="Sprite" parent="land1" index="0"]
+
+position = Vector2( 350, 200 )
+scale = Vector2( 2.73438, 2.22222 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="land2" type="ParallaxLayer" parent="." index="4"]
+
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 700, 0 )
+_sections_unfolded = [ "Motion" ]
+
+[node name="Sprite" type="Sprite" parent="land2" index="0"]
+
+position = Vector2( 348.5, 200 )
+scale = Vector2( 2.74609, 2.22222 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+

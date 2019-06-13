@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-var vidas = 5
+var vidas = 4
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
@@ -23,7 +23,7 @@ func _physics_process(delta):
 		var colider = $RayCastIzq.get_collider()
 		#print(colider.name)
 		#Primera alternativa conbinar los dos ifs
-#		if(colider.is_in_group("player")):
+#		#if(colider.is_in_group("player")):
 #			print("jugador")
 		#El inconveniente es que solo detecta de un lado que es la espada
 #		if(colider.get_parent().get_parent().is_in_group("player")):
@@ -69,7 +69,22 @@ func take_damage():
 		#Reinicar vidas por si acaso sale un bug, mas vale prevenicr que lamentar
 		vidas = 5
 		#print("estoy muerto")
-		queue_free()
+		$AnimationPlayer.play("mino_dead")
+		
 	pass
 
 
+
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "mino_dead":
+		queue_free()
+	pass # replace with function body
+
+
+func _on_swordEnem_body_entered(body):
+	if body.is_in_group("player"):
+		body.take_damage()
+		pass
+	pass # replace with function body
